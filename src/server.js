@@ -7,6 +7,10 @@ const app = express();
 
 app.set('port',process.env.PORT || 3000);
 
+//middleware
+app.use(webpackDevMiddleware(webpack(webpackConfig)));
+
+
 app.get('/',(req, res)=>{
     res.send("Hello world")
 });

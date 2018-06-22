@@ -3,7 +3,7 @@ import htmlWebpackPlugin from 'html-webpack-plugin';
 import liveReloadPlugin from 'webpack-livereload-plugin';
 
 
-export default={
+export default{
     entry:'./src/client/index.js',
     output:{
         path:'/',
@@ -39,5 +39,11 @@ export default={
                 ]
             }
         ]
-    }
+    },
+    plugins:[
+        new htmlWebpackPlugin({
+            template:'src/client/index.html'
+        }),
+        new liveReloadPlugin()
+    ]
 }
